@@ -27,7 +27,6 @@ describe "StaticPages" do
       page.should have_selector('title', 
                     :text => " | Help")
     end
-    
   end
 
   describe "About Page" do
@@ -44,6 +43,16 @@ describe "StaticPages" do
 
   end
 
+  describe "Contact Page" do
+    it "should have content 'contact' " do
+      visit '/static_pages/contact'
+      page.should have_content('Contact Us')
+    end
 
+    it "should have the right title 'Contact Us' " do
+      visit '/static_pages/contact'
+      page.should have_selector('title', :text => " | Contact Us")
+    end
+  end
 
 end
